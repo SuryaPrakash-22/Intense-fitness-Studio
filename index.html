@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTENSE FITNESS STUDIO | Transform Your Body</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <script>
+    // Apply saved theme immediately to prevent flash
+    (function () {
+      var theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader">
+        <img src="Logo/Logo.png" alt="Intense Logo" class="loader-logo" />
+        <span>INTENSE</span>
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img src="Logo/Logo.png" alt="Intense Logo" class="logo-img" />
+          <span>INTENSE</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#trainers">Trainers</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#pricing" class="nav-cta">Join Now</a>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-bg">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-content">
+        <div class="hero-badge" data-aos="fade-down">
+          <i class="fas fa-fire"></i> #1 FITNESS STUDIO IN TOWN
+        </div>
+        <h1 data-aos="fade-up">
+          <span class="hero-line">PUSH YOUR</span>
+          <span class="hero-line hero-highlight">LIMITS</span>
+          <span class="hero-line">BEYOND</span>
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style="font-weight: bold"
+        >
+          Transform your body, elevate your mind, and unleash the warrior
+          within. Join the most intense fitness experience of your life.
+        </p>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+          <a href="#pricing" class="btn btn-primary">
+            Start Your Journey <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#about" class="btn btn-outline">
+            <i class="fas fa-play"></i> Explore More
+          </a>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+          <div class="hero-stat">
+            <span class="stat-number" data-target="15">0</span
+            ><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-number" data-target="5000">0</span
+            ><span class="stat-suffix">+</span>
+            <span class="stat-label">Happy Members</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-number" data-target="50">0</span
+            ><span class="stat-suffix">+</span>
+            <span class="stat-label">Expert Trainers</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-images" data-aos="fade-right">
+            <div class="about-img-main">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=700&fit=crop"
+                alt="Gym Interior"
+              />
+            </div>
+            <div class="about-img-secondary">
+              <img
+                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=350&fit=crop"
+                alt="Training"
+              />
+            </div>
+            <div class="about-experience-badge">
+              <span class="exp-number">15+</span>
+              <span class="exp-text">Years of Excellence</span>
+            </div>
+          </div>
+          <div class="about-content" data-aos="fade-left">
+            <span class="section-tag"
+              ><i class="fas fa-star"></i> WHO WE ARE</span
+            >
+            <h2 class="section-title">
+              We Are Not Just A Gym.<br /><span class="highlight"
+                >We Are A Lifestyle.</span
+              >
+            </h2>
+            <p class="about-text">
+              At Intense Fitness Studio, we believe that fitness is more than
+              just lifting weights. It's about building discipline, breaking
+              barriers, and becoming the best version of yourself. Our
+              state-of-the-art facility, world-class trainers, and supportive
+              community are here to fuel your transformation.
+            </p>
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                <div>
+                  <h4>World-Class Equipment</h4>
+                  <p>Latest machines and free weights from top brands</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <div>
+                  <h4>Expert Coaching</h4>
+                  <p>Certified trainers with personalized programs</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="feature-icon">
+                  <i class="fas fa-heart-pulse"></i>
+                </div>
+                <div>
+                  <h4>Nutrition Guidance</h4>
+                  <p>Custom meal plans for optimal results</p>
+                </div>
+              </div>
+            </div>
+            <a href="#programs" class="btn btn-primary"
+              >Our Programs <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section programs">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-fire"></i> OUR PROGRAMS</span
+          >
+          <h2 class="section-title">
+            Build Your <span class="highlight">Perfect Body</span>
+          </h2>
+          <p class="section-desc">
+            Choose from our wide range of programs designed to help you achieve
+            your fitness goals
+          </p>
+        </div>
+        <div class="programs-grid">
+          <div class="program-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=500&fit=crop"
+                alt="Strength Training"
+              />
+              <div class="program-overlay">
+                <span class="program-tag">POPULAR</span>
+              </div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fas fa-dumbbell"></i></div>
+              <h3>Strength Training</h3>
+              <p>
+                Build raw power and sculpt lean muscle with our progressive
+                overload programs.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=500&fit=crop"
+                alt="HIIT Classes"
+              />
+              <div class="program-overlay">
+                <span class="program-tag">TRENDING</span>
+              </div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fas fa-bolt"></i></div>
+              <h3>HIIT Classes</h3>
+              <p>
+                Burn fat fast with high-intensity interval training that keeps
+                your metabolism firing.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="program-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=500&fit=crop"
+                alt="Yoga & Flexibility"
+              />
+              <div class="program-overlay"></div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fas fa-spa"></i></div>
+              <h3>Yoga & Flexibility</h3>
+              <p>
+                Restore balance, improve flexibility, and find inner peace with
+                expert-led yoga sessions.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&h=500&fit=crop"
+                alt="Cardio Blast"
+              />
+              <div class="program-overlay"></div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
+              <h3>Cardio Blast</h3>
+              <p>
+                Boost endurance and cardiovascular health with our heart-pumping
+                cardio sessions.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="program-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=500&fit=crop"
+                alt="CrossFit"
+              />
+              <div class="program-overlay">
+                <span class="program-tag">NEW</span>
+              </div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon">
+                <i class="fas fa-fire-flame-curved"></i>
+              </div>
+              <h3>CrossFit</h3>
+              <p>
+                Challenge every muscle with varied functional movements at high
+                intensity.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="program-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="program-image">
+              <img
+                src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&h=500&fit=crop"
+                alt="Boxing"
+              />
+              <div class="program-overlay"></div>
+            </div>
+            <div class="program-content">
+              <div class="program-icon"><i class="fas fa-hand-fist"></i></div>
+              <h3>Boxing & MMA</h3>
+              <p>
+                Learn self-defense while getting an incredible full-body workout
+                with combat training.
+              </p>
+              <a href="#pricing" class="program-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+          <h2>
+            Ready to Start Your <span class="highlight">Transformation?</span>
+          </h2>
+          <p>
+            Get your free 7-day trial pass and experience the intensity
+            firsthand.
+          </p>
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Claim Free Trial <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section schedule">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-calendar"></i> CLASS SCHEDULE</span
+          >
+          <h2 class="section-title">
+            Weekly <span class="highlight">Class Timetable</span>
+          </h2>
+          <p class="section-desc">
+            Plan your week with our diverse range of classes
+          </p>
+        </div>
+        <div class="schedule-tabs" data-aos="fade-up">
+          <button class="schedule-tab active" data-day="monday">Mon</button>
+          <button class="schedule-tab" data-day="tuesday">Tue</button>
+          <button class="schedule-tab" data-day="wednesday">Wed</button>
+          <button class="schedule-tab" data-day="thursday">Thu</button>
+          <button class="schedule-tab" data-day="friday">Fri</button>
+          <button class="schedule-tab" data-day="saturday">Sat</button>
+          <button class="schedule-tab" data-day="sunday">Sun</button>
+        </div>
+        <div class="schedule-content" data-aos="fade-up">
+          <div class="schedule-day active" id="monday">
+            <div class="schedule-item">
+              <div class="schedule-time">06:00 - 07:00</div>
+              <div class="schedule-info">
+                <h4>Morning HIIT</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">08:00 - 09:30</div>
+              <div class="schedule-info">
+                <h4>Strength & Conditioning</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:00 - 11:00</div>
+              <div class="schedule-info">
+                <h4>Strength & Conditioning</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level beginner">Beginner</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">17:00 - 18:00</div>
+              <div class="schedule-info">
+                <h4>Strength & Conditioning</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">19:00 - 20:00</div>
+              <div class="schedule-info">
+                <h4>CrossFit WOD</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="tuesday">
+            <div class="schedule-item">
+              <div class="schedule-time">06:00 - 07:00</div>
+              <div class="schedule-info">
+                <h4>Spin Class</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">09:00 - 10:00</div>
+              <div class="schedule-info">
+                <h4>Pilates Core</h4>
+                <p><i class="fas fa-user"></i> Coach Pavan</p>
+              </div>
+              <span class="schedule-level beginner">Beginner</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">17:30 - 19:00</div>
+              <div class="schedule-info">
+                <h4>MMA Training</h4>
+                <p><i class="fas fa-user"></i> Coach Bhaskar</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">19:30 - 20:30</div>
+              <div class="schedule-info">
+                <h4>Cardio Blast</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="wednesday">
+            <div class="schedule-item">
+              <div class="schedule-time">06:00 - 07:00</div>
+              <div class="schedule-info">
+                <h4>Morning HIIT</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:00 - 11:30</div>
+              <div class="schedule-info">
+                <h4>Power Lifting</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">17:00 - 18:00</div>
+              <div class="schedule-info">
+                <h4>Yoga Restore</h4>
+                <p><i class="fas fa-user"></i> Coach Pavan</p>
+              </div>
+              <span class="schedule-level beginner">Beginner</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">19:00 - 20:00</div>
+              <div class="schedule-info">
+                <h4>CrossFit WOD</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="thursday">
+            <div class="schedule-item">
+              <div class="schedule-time">06:00 - 07:00</div>
+              <div class="schedule-info">
+                <h4>Spin Class</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">09:00 - 10:30</div>
+              <div class="schedule-info">
+                <h4>Strength & Conditioning</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">17:00 - 18:00</div>
+              <div class="schedule-info">
+                <h4>Boxing Advanced</h4>
+                <p><i class="fas fa-user"></i> Coach Bhaskar</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">19:00 - 20:00</div>
+              <div class="schedule-info">
+                <h4>HIIT Extreme</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="friday">
+            <div class="schedule-item">
+              <div class="schedule-time">06:00 - 07:00</div>
+              <div class="schedule-info">
+                <h4>Morning Flow Yoga</h4>
+                <p><i class="fas fa-user"></i> Coach Pavan</p>
+              </div>
+              <span class="schedule-level beginner">Beginner</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:00 - 11:00</div>
+              <div class="schedule-info">
+                <h4>Functional Training</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">17:00 - 18:30</div>
+              <div class="schedule-info">
+                <h4>CrossFit Open Gym</h4>
+                <p><i class="fas fa-user"></i> All Coaches</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="saturday">
+            <div class="schedule-item">
+              <div class="schedule-time">08:00 - 09:30</div>
+              <div class="schedule-info">
+                <h4>Weekend Warrior HIIT</h4>
+                <p><i class="fas fa-user"></i> Coach Ravi</p>
+              </div>
+              <span class="schedule-level intermediate">Intermediate</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:00 - 11:00</div>
+              <div class="schedule-info">
+                <h4>Partner Workouts</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">12:00 - 13:00</div>
+              <div class="schedule-info">
+                <h4>Boxing Sparring</h4>
+                <p><i class="fas fa-user"></i> Coach Bhaskar</p>
+              </div>
+              <span class="schedule-level advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="schedule-day" id="sunday">
+            <div class="schedule-item">
+              <div class="schedule-time">09:00 - 10:00</div>
+              <div class="schedule-info">
+                <h4>Yoga & Meditation</h4>
+                <p><i class="fas fa-user"></i> Coach Pavan</p>
+              </div>
+              <span class="schedule-level beginner">All Levels</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:30 - 11:30</div>
+              <div class="schedule-info">
+                <h4>Active Recovery</h4>
+                <p><i class="fas fa-user"></i> Coach Srinu</p>
+              </div>
+              <span class="schedule-level beginner">Beginner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="section trainers">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-users"></i> MEET THE TEAM</span
+          >
+          <h2 class="section-title">
+            Our Expert <span class="highlight">Trainers</span>
+          </h2>
+          <p class="section-desc">
+            World-class certified coaches dedicated to your success
+          </p>
+        </div>
+        <div class="trainers-grid">
+          <div class="trainer-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="trainer-image">
+              <img src="images/ravi.jpg.jpeg" alt="Coach Ravi" />
+              <div class="trainer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="trainer-info">
+              <h3>Ravi</h3>
+              <span class="trainer-role">HIIT & Cardio Specialist</span>
+              <p>
+                10+ years experience in high-intensity training and athletic
+                conditioning.
+              </p>
+              <a
+                href="#"
+                class="btn-certification"
+                data-cert="certificates/ravi.jpg"
+                data-name="Ravi"
+              >
+                <i class="fas fa-certificate"></i> View Certification
+              </a>
+            </div>
+          </div>
+          <div class="trainer-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="trainer-image">
+              <img src="images/srinu.jpg.jpeg" alt="Coach Srinu" />
+              <div class="trainer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="trainer-info">
+              <h3>Srinu</h3>
+              <span class="trainer-role">Strength & Conditioning</span>
+              <p>
+                Former national athlete with expertise in progressive strength
+                training.
+              </p>
+              <a
+                href="#"
+                class="btn-certification"
+                data-cert="certificates/srinu.pdf"
+                data-name="Srinu"
+              >
+                <i class="fas fa-certificate"></i> View Certification
+              </a>
+            </div>
+          </div>
+          <div class="trainer-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="trainer-image">
+              <img src="images/Pavan.jpg.jpeg" alt="Coach Pavan" />
+              <div class="trainer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="trainer-info">
+              <h3>Pavan</h3>
+              <span class="trainer-role">Strength & Conditioning</span>
+              <p>
+                Former national athlete with expertise in progressive strength
+                training.
+              </p>
+              <a
+                href="#"
+                class="btn-certification"
+                data-cert="certificates/pavan.pdf"
+                data-name="Pavan"
+              >
+                <i class="fas fa-certificate"></i> View Certification
+              </a>
+            </div>
+          </div>
+          <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="trainer-image">
+              <img src="images/Bhaskar.jpg.jpeg" alt="Coach Bhaskar" />
+              <div class="trainer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="trainer-info">
+              <h3>Bhaskar</h3>
+              <span class="trainer-role">Strength & Conditioning</span>
+              <p>
+                Former national athlete with expertise in progressive strength
+                training.
+              </p>
+              <a
+                href="#"
+                class="btn-certification"
+                data-cert="certificates/bhaskar.pdf"
+                data-name="Bhaskar"
+              >
+                <i class="fas fa-certificate"></i> View Certification
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-tag"></i> PRICING PLANS</span
+          >
+          <h2 class="section-title">
+            Choose Your <span class="highlight">Plan</span>
+          </h2>
+          <p class="section-desc">
+            Flexible membership options to fit your lifestyle and goals
+          </p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="pricing-header">
+              <span class="plan-name">Starter</span>
+              <div class="plan-price">
+                <span class="currency">₹</span>
+                <span class="amount">2000</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan-desc">
+                Perfect for beginners starting their fitness journey
+              </p>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-check"></i> Access to gym floor</li>
+              <li><i class="fas fa-check"></i> 2 group classes per week</li>
+              <li><i class="fas fa-check"></i> Locker & shower access</li>
+              <li><i class="fas fa-check"></i> Fitness assessment</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i> Personal training
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i> Nutrition plan
+              </li>
+              <li class="disabled">
+                <i class="fas fa-times"></i> Sauna & spa access
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+          </div>
+          <div
+            class="pricing-card featured"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="featured-badge">MOST POPULAR</div>
+            <div class="pricing-header">
+              <span class="plan-name">Pro</span>
+              <div class="plan-price">
+                <span class="currency">₹</span>
+                <span class="amount">6000</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan-desc">
+                Best value for dedicated fitness enthusiasts
+              </p>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-check"></i> Unlimited gym access</li>
+              <li><i class="fas fa-check"></i> Unlimited group classes</li>
+              <li><i class="fas fa-check"></i> Locker & shower access</li>
+              <li><i class="fas fa-check"></i> Monthly fitness assessment</li>
+              <li><i class="fas fa-check"></i> 2 PT sessions/month</li>
+              <li><i class="fas fa-check"></i> Basic nutrition plan</li>
+              <li class="disabled">
+                <i class="fas fa-times"></i> Sauna & spa access
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+          </div>
+          <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-header">
+              <span class="plan-name">Elite</span>
+              <div class="plan-price">
+                <span class="currency">₹</span>
+                <span class="amount">9000</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan-desc">The ultimate package for maximum results</p>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-check"></i> 24/7 unlimited access</li>
+              <li><i class="fas fa-check"></i> Unlimited group classes</li>
+              <li><i class="fas fa-check"></i> Premium locker</li>
+              <li><i class="fas fa-check"></i> Weekly fitness assessment</li>
+              <li><i class="fas fa-check"></i> 4 PT sessions/month</li>
+              <li><i class="fas fa-check"></i> Custom nutrition plan</li>
+              <li><i class="fas fa-check"></i> Sauna & spa access</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-images"></i> OUR GALLERY</span
+          >
+          <h2 class="section-title">
+            See Our <span class="highlight">Facility</span>
+          </h2>
+          <p class="section-desc">
+            Take a tour of our world-class fitness facility
+          </p>
+        </div>
+        <div class="gallery-grid" data-aos="fade-up">
+          <div class="gallery-item gallery-item-tall">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=800&fit=crop"
+              alt="Main Gym Floor"
+            />
+            <div class="gallery-overlay">
+              <h4>Main Gym Floor</h4>
+              <p>10,000 sq ft of premium equipment</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop"
+              alt="Weight Room"
+            />
+            <div class="gallery-overlay">
+              <h4>Weight Room</h4>
+              <p>Free weights & machines</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop"
+              alt="Group Studio"
+            />
+            <div class="gallery-overlay">
+              <h4>Group Studio</h4>
+              <p>Classes for all levels</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&h=400&fit=crop"
+              alt="Boxing Ring"
+            />
+            <div class="gallery-overlay">
+              <h4>Boxing Ring</h4>
+              <p>Professional combat training</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1570829460005-c840387bb1ca?w=600&h=400&fit=crop"
+              alt="Yoga Studio"
+            />
+            <div class="gallery-overlay">
+              <h4>Yoga Studio</h4>
+              <p>Peaceful mindfulness space</p>
+            </div>
+          </div>
+          <div class="gallery-item gallery-item-wide">
+            <img
+              src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&h=400&fit=crop"
+              alt="CrossFit Zone"
+            />
+            <div class="gallery-overlay">
+              <h4>CrossFit Zone</h4>
+              <p>Functional training area</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&h=400&fit=crop"
+              alt="Cardio Area"
+            />
+            <div class="gallery-overlay">
+              <h4>Cardio Area</h4>
+              <p>Modern cardio machines</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop"
+              alt="Stretching Zone"
+            />
+            <div class="gallery-overlay">
+              <h4>Stretching Zone</h4>
+              <p>Warm-up & recovery space</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-quote-left"></i> TESTIMONIALS</span
+          >
+          <h2 class="section-title">
+            What Our Members <span class="highlight">Say</span>
+          </h2>
+          <p class="section-desc">
+            Real stories from real members who transformed their lives
+          </p>
+        </div>
+        <div class="testimonials-slider" data-aos="fade-up">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "Joining Intense Fitness was the best decision of my life. I've
+                lost 30 lbs in 6 months and gained confidence I never knew I
+                had. The trainers are incredible!"
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1611432579699-484f7990b127?w=80&h=80&fit=crop"
+                  alt="Priya S."
+                />
+                <div>
+                  <h4>Priya S.</h4>
+                  <span>Member for 2 years</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "The CrossFit program here is top-notch. Coach Ravi pushes us to
+                our limits but always ensures proper form. I've never been
+                stronger or more fit in my entire life."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop"
+                  alt="Arjun T."
+                />
+                <div>
+                  <h4>Arjun T.</h4>
+                  <span>Member for 3 years</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "As a busy mom, I needed a gym with flexible schedules and
+                childcare. Intense Fitness has it all! The community here is so
+                welcoming and supportive."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1614204424926-196a80bf0be8?w=80&h=80&fit=crop"
+                  alt="Kavitha K."
+                />
+                <div>
+                  <h4>Kavitha K.</h4>
+                  <span>Member for 1 year</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                "I've been to dozens of gyms, but nothing compares to Intense.
+                The equipment is always clean, the atmosphere is motivating, and
+                the results speak for themselves."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=80&h=80&fit=crop"
+                  alt="Rahul L."
+                />
+                <div>
+                  <h4>Rahul L.</h4>
+                  <span>Member for 4 years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-controls">
+            <button
+              class="testimonial-btn prev"
+              id="prevTestimonial"
+              aria-label="Previous"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+            <button
+              class="testimonial-btn next"
+              id="nextTestimonial"
+              aria-label="Next"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section class="section bmi-section">
+      <div class="container">
+        <div class="bmi-grid">
+          <div class="bmi-content" data-aos="fade-right">
+            <span class="section-tag"
+              ><i class="fas fa-calculator"></i> BMI CALCULATOR</span
+            >
+            <h2 class="section-title">
+              Know Your <span class="highlight">Body Mass Index</span>
+            </h2>
+            <p>
+              Calculate your BMI to understand your body composition and get
+              personalized recommendations from our expert trainers.
+            </p>
+          </div>
+          <div class="bmi-calculator" data-aos="fade-left">
+            <form id="bmiForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bmiHeight">Height (cm)</label>
+                  <input
+                    type="number"
+                    id="bmiHeight"
+                    placeholder="e.g., 175"
+                    min="50"
+                    max="300"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="bmiWeight">Weight (kg)</label>
+                  <input
+                    type="number"
+                    id="bmiWeight"
+                    placeholder="e.g., 70"
+                    min="10"
+                    max="500"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Calculate BMI
+              </button>
+            </form>
+            <div class="bmi-result" id="bmiResult" style="display: none">
+              <div class="bmi-value" id="bmiValue"></div>
+              <div class="bmi-category" id="bmiCategory"></div>
+              <div class="bmi-bar">
+                <div class="bmi-bar-fill" id="bmiBarFill"></div>
+              </div>
+              <div class="bmi-labels">
+                <span>Underweight</span><span>Normal</span
+                ><span>Overweight</span><span>Obese</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag"
+            ><i class="fas fa-envelope"></i> GET IN TOUCH</span
+          >
+          <h2 class="section-title">
+            Contact <span class="highlight">Us</span>
+          </h2>
+          <p class="section-desc">
+            Have questions? Reach out and we'll get back to you within 24 hours
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Our Location</h4>
+                <p>123 Fitness Avenue, Downtown<br />New York, NY 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone Number</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email Address</h4>
+                <p>info@intensefitness.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4>Working Hours</h4>
+                <p>
+                  Mon - Fri: 5:00 AM - 11:00 PM<br />Sat - Sun: 7:00 AM - 9:00
+                  PM
+                </p>
+              </div>
+            </div>
+            <div class="contact-socials">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+          <form class="contact-form" data-aos="fade-left" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input
+                  type="text"
+                  id="contactName"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  placeholder="john@email.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <select id="contactSubject" required>
+                <option value="">Select a subject</option>
+                <option value="membership">Membership Inquiry</option>
+                <option value="trial">Free Trial Request</option>
+                <option value="personal-training">Personal Training</option>
+                <option value="classes">Group Classes</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Your Message</label>
+              <textarea
+                id="contactMessage"
+                rows="5"
+                placeholder="Tell us about your fitness goals..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="formSuccess" style="display: none">
+              <i class="fas fa-check-circle"></i>
+              <p>Message sent successfully! We'll get back to you soon.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="Logo/Logo.png" alt="Intense Logo" class="logo-img" />
+              <span>INTENSE</span>
+            </a>
+            <p>
+              Transform your body, elevate your mind, and unleash the warrior
+              within. Join the most intense fitness experience of your life.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#programs">Programs</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Programs</h4>
+            <ul>
+              <li><a href="#programs">Strength Training</a></li>
+              <li><a href="#programs">HIIT Classes</a></li>
+              <li><a href="#programs">Yoga & Flexibility</a></li>
+              <li><a href="#programs">CrossFit</a></li>
+              <li><a href="#programs">Boxing & MMA</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe for fitness tips and exclusive offers.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Intense Fitness Studio. All Rights Reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal">
+      <div class="cert-modal-overlay"></div>
+      <div class="cert-modal-content">
+        <button
+          class="cert-modal-close"
+          id="certModalClose"
+          aria-label="Close modal"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 id="certModalTitle">Certification</h3>
+        <div class="cert-modal-body">
+          <img id="certModalImg" src="" alt="Certificate" />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
