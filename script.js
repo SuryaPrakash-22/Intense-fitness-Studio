@@ -310,16 +310,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === Contact Form ===
+  // === Contact Form — Send via WhatsApp + Email ===
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // Basic client-side validation is handled by HTML required attributes
-      const formData = new FormData(contactForm);
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const subject = document.getElementById("contactSubject").value;
+      const message = document.getElementById("contactMessage").value.trim();
 
-      // Show success message (in production, this would send to a server)
+      if (!name || !email || !phone || !subject || !message) return;
+
+      // Build message text
+      const msgText =
+        `🏋️ *New Inquiry — Intense Fitness Studio*\n\n` +
+        `*Name:* ${name}\n` +
+        `*Email:* ${email}\n` +
+        `*Phone:* ${phone}\n` +
+        `*Subject:* ${subject}\n` +
+        `*Message:* ${message}`;
+
+      // WhatsApp numbers (without +91- formatting)
+      const whatsappNumbers = ["919182553241", "917671929399", "919848064277"];
+
+      // Send to first WhatsApp number (opens WhatsApp)
+      const whatsappURL = `https://wa.me/${whatsappNumbers[0]}?text=${encodeURIComponent(msgText)}`;
+      window.open(whatsappURL, "_blank");
+
+      // Send email via mailto
+      const emailSubject = `New Inquiry: ${subject} — from ${name}`;
+      const emailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`;
+      const mailtoURL = `mailto:Intensefitnessstudiovzm@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open email client slightly delayed so WhatsApp opens first
+      setTimeout(() => {
+        window.location.href = mailtoURL;
+      }, 1000);
+
+      // Show success message
       const successDiv = document.getElementById("formSuccess");
       successDiv.style.display = "block";
       contactForm.reset();
@@ -409,9 +440,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
       });
 
@@ -419,6 +449,185 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transform = "";
       });
     });
+  }
+
+  // === Magnetic hover on buttons ===
+  if (window.innerWidth > 768) {
+    document
+      .querySelectorAll(".btn-primary, .btn-outline, .nav-cta")
+      .forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "";
+        });
+      });
+  }
+
+  // === Card glow effect following cursor ===
+  document
+    .querySelectorAll(
+      ".program-card, .trainer-card, .pricing-card, .testimonial-card",
+    )
+    .forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--glow-x", `${x}px`);
+        card.style.setProperty("--glow-y", `${y}px`);
+      });
+    });
+
+  // === Scroll-triggered section reveals with stagger ===
+  const staggerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const children = entry.target.querySelectorAll(
+            ".program-card, .trainer-card, .pricing-card, .gallery-item, .schedule-item",
+          );
+          children.forEach((child, i) => {
+            child.style.transitionDelay = `${i * 100}ms`;
+            child.classList.add("revealed");
+          });
+          staggerObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  document
+    .querySelectorAll(
+      ".programs-grid, .trainers-grid, .pricing-grid, .gallery-grid, .schedule-day.active",
+    )
+    .forEach((grid) => {
+      staggerObserver.observe(grid);
+    });
+
+  // === Text split reveal for section titles ===
+  const titleObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("title-revealed");
+          titleObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  document.querySelectorAll(".section-title").forEach((title) => {
+    titleObserver.observe(title);
+  });
+
+  // === Smooth progress bar on scroll ===
+  const scrollProgress = document.createElement("div");
+  scrollProgress.classList.add("scroll-progress");
+  document.body.appendChild(scrollProgress);
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = `${scrollPercent}%`;
+    },
+    { passive: true },
+  );
+
+  // === Typing effect on hero highlight ===
+  const heroHighlight = document.querySelector(".hero-highlight");
+  if (heroHighlight) {
+    const words = ["LIMITS", "BOUNDARIES", "EXPECTATIONS"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const current = words[wordIndex];
+
+      if (isDeleting) {
+        heroHighlight.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        heroHighlight.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let delay = isDeleting ? 50 : 120;
+
+      if (!isDeleting && charIndex === current.length) {
+        delay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 500;
+      }
+
+      setTimeout(typeEffect, delay);
+    }
+
+    setTimeout(typeEffect, 2000);
+  }
+
+  // === Smooth reveal for schedule items on tab switch ===
+  scheduleTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const day = tab.dataset.day;
+      const activeDay = document.getElementById(day);
+      if (activeDay) {
+        const items = activeDay.querySelectorAll(".schedule-item");
+        items.forEach((item, i) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateX(-20px)";
+          setTimeout(() => {
+            item.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+            item.style.opacity = "1";
+            item.style.transform = "translateX(0)";
+          }, i * 80);
+        });
+      }
+    });
+  });
+
+  // === Touch swipe for testimonials ===
+  if (track) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
+
+    track.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && currentSlide < cards.length - 1) {
+            goToSlide(currentSlide + 1);
+          } else if (diff < 0 && currentSlide > 0) {
+            goToSlide(currentSlide - 1);
+          }
+        }
+      },
+      { passive: true },
+    );
   }
 
   // === Keyboard accessibility for schedule tabs ===

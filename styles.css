@@ -2138,6 +2138,234 @@ html[data-theme] * {
   transform: translate(0) scale(1);
 }
 
+/* === Scroll Progress Bar === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient);
+  z-index: 10001;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* === Card Cursor Glow Effect === */
+.program-card,
+.trainer-card,
+.pricing-card,
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.program-card::before,
+.trainer-card::before,
+.pricing-card::before,
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: var(--glow-y, 50%);
+  left: var(--glow-x, 50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.program-card:hover::before,
+.trainer-card:hover::before,
+.pricing-card:hover::before,
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+.program-card > *,
+.trainer-card > *,
+.pricing-card > *,
+.testimonial-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Stagger Reveal Animation === */
+.program-card,
+.trainer-card,
+.pricing-card,
+.gallery-item,
+.schedule-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.program-card.revealed,
+.trainer-card.revealed,
+.pricing-card.revealed,
+.gallery-item.revealed,
+.schedule-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Section Title Reveal === */
+.section-title {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-title.title-revealed {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* === Enhanced Card Hover Effects === */
+.program-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.program-card:hover {
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px var(--primary-glow);
+}
+
+.trainer-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease;
+}
+
+.trainer-card:hover {
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 25px var(--primary-glow);
+}
+
+.pricing-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255, 170, 0, 0.4);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--primary-glow);
+}
+
+/* === Gallery Hover Zoom & Reveal === */
+.gallery-item img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  transform: translateY(10px);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Schedule Item Hover === */
+.schedule-item {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.schedule-item:hover {
+  background: rgba(255, 170, 0, 0.05);
+  border-color: rgba(255, 170, 0, 0.2);
+  transform: translateX(6px);
+}
+
+/* === Typing Cursor for Hero === */
+.hero-highlight {
+  border-right: 3px solid var(--primary);
+  animation: blink-cursor 0.8s step-end infinite;
+  padding-right: 4px;
+}
+
+@keyframes blink-cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* === Button Ripple Effect === */
+.btn-primary,
+.btn-outline {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-primary::after,
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 10%,
+    transparent 70%
+  );
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.btn-primary:active::after,
+.btn-outline:active::after {
+  transform: scale(2.5);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* === Smooth Section Separator Gradient === */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--glass-border),
+    transparent
+  );
+}
+
+.section {
+  position: relative;
+}
+
 /* === Responsive Design === */
 @media (max-width: 1024px) {
   .about-grid {
@@ -2293,44 +2521,213 @@ html[data-theme] * {
 
   .programs-grid {
     grid-template-columns: 1fr;
-    max-width: 450px;
-    margin: 0 auto;
+    gap: 20px;
   }
+
   .trainers-grid {
     grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    gap: 24px;
   }
+
   .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
     max-width: 400px;
     margin: 0 auto;
   }
+
   .bmi-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
+
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
+
   .gallery-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 200px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
   }
-  .gallery-item-wide {
-    grid-column: span 1;
-  }
+
+  .gallery-item-wide,
   .gallery-item-tall {
+    grid-column: span 1;
     grid-row: span 1;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
     text-align: center;
   }
 
-  .footer-socials,
-  .footer-brand .logo {
+  .schedule-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
     justify-content: center;
+  }
+
+  .schedule-tab {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .schedule-time {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+    min-width: 100%;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-line {
+    font-size: 2.8rem;
+  }
+}
+
+/* === Small Phones (480px and below) === */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  h1,
+  .hero-line {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .hero-content {
+    padding: 80px 12px 50px;
+  }
+
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-stats {
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 1.7rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .program-card {
+    border-radius: 12px;
+  }
+
+  .trainer-card {
+    border-radius: 12px;
+  }
+
+  .pricing-card {
+    border-radius: 12px;
+  }
+
+  .pricing-grid {
+    max-width: 100%;
+  }
+
+  .plan-price .amount {
+    font-size: 2.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+
+  .gallery-item-wide {
+    grid-column: span 1;
+  }
+
+  .schedule-tabs {
+    gap: 4px;
+  }
+
+  .schedule-tab {
+    padding: 7px 10px;
+    font-size: 0.75rem;
+  }
+
+  .nav-links {
+    width: 90%;
+    padding: 70px 20px 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  .bmi-calculator input,
+  .bmi-calculator select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
   }
 
   .footer-bottom {
@@ -2338,288 +2735,112 @@ html[data-theme] * {
     gap: 12px;
     text-align: center;
   }
-
-  .schedule-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .schedule-time {
-    min-width: unset;
-  }
-
-  .schedule-tabs {
-    gap: 6px;
-  }
-  .schedule-tab {
-    padding: 8px 14px;
-    font-size: 0.82rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .section-header {
-    padding: 0 8px;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-  .section-desc {
-    font-size: 0.95rem;
-  }
-
-  .cta-content h2 {
-    font-size: 1.6rem;
-  }
-  .cta-content p {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-card {
-    padding: 24px 20px;
-  }
-  .testimonial-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-  .testimonial-author img {
-    width: 46px;
-    height: 46px;
-  }
-
-  .cert-modal-content {
-    width: 95%;
-    max-height: 85vh;
-  }
-  .cert-modal-content h3 {
-    font-size: 1.1rem;
-    padding: 14px 18px;
-  }
-  .cert-modal-body {
-    padding: 12px;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-features {
-    gap: 16px;
-  }
-
-  .about-feature {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-  .logo-img {
-    width: 32px;
-    height: 32px;
-  }
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-  .hero-line {
-    font-size: 2.5rem;
-  }
-  .hero-content {
-    padding: 90px 12px 50px;
-  }
-  .section {
-    padding: 60px 0;
-  }
-  .section-title {
-    font-size: 1.6rem;
-  }
-  .section-desc {
-    font-size: 0.88rem;
-  }
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.9rem;
-  }
-  .btn-lg {
-    padding: 14px 28px;
-    font-size: 0.95rem;
-  }
-  .pricing-card {
-    padding: 30px 20px;
-  }
-  .pricing-grid {
-    max-width: 100%;
-  }
-  .trainers-grid {
-    max-width: 100%;
-  }
-  .programs-grid {
-    max-width: 100%;
-  }
-
-  .hero-stat {
-    flex: 1;
-    min-width: 80px;
-  }
-  .stat-number {
-    font-size: 1.7rem;
-  }
-  .stat-suffix {
-    font-size: 1.3rem;
-  }
-  .stat-label {
-    font-size: 0.75rem;
-  }
-
-  .about-text {
-    font-size: 0.92rem;
-  }
-  .about-feature h4 {
-    font-size: 0.95rem;
-  }
-  .about-feature p {
-    font-size: 0.85rem;
-  }
-
-  .program-content h3 {
-    font-size: 1.1rem;
-  }
-  .program-content p {
-    font-size: 0.88rem;
-  }
-
-  .schedule-tabs {
-    gap: 4px;
-  }
-  .schedule-tab {
-    padding: 8px 10px;
-    font-size: 0.78rem;
-  }
-  .schedule-item {
-    padding: 14px 16px;
-  }
-  .schedule-time {
-    font-size: 0.88rem;
-  }
-  .schedule-info h4 {
-    font-size: 0.95rem;
-  }
-
-  .trainer-info h3 {
-    font-size: 1.15rem;
-  }
-  .trainer-info p {
-    font-size: 0.88rem;
-  }
-
-  .plan-price .amount {
-    font-size: 2.5rem;
-  }
-  .plan-features li {
-    font-size: 0.88rem;
-  }
-
-  .testimonial-card {
-    padding: 20px 16px;
-  }
-  .testimonial-text {
-    font-size: 0.9rem;
-  }
-  .testimonial-controls {
-    gap: 12px;
-  }
-  .testimonial-btn {
-    width: 38px;
-    height: 38px;
-  }
-
-  .gallery-grid {
-    grid-auto-rows: 180px;
-  }
-
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 0.9rem;
-  }
-
-  .bmi-calculator {
-    padding: 20px;
-  }
-
-  .footer-brand p {
-    font-size: 0.88rem;
-  }
-  .footer-newsletter p {
-    font-size: 0.88rem;
-  }
-
-  .cert-modal-content {
-    width: 96%;
-    margin: 8px;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-  }
-  .logo-img {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-/* === Extra Small Devices (320px - 360px) === */
+/* === Extra Small Phones (360px and below) === */
 @media (max-width: 360px) {
   .container {
     padding: 0 12px;
   }
+
+  h1,
   .hero-line {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
-  .hero-content {
-    padding: 80px 8px 40px;
-  }
-  .hero-badge {
-    font-size: 0.68rem;
-    padding: 5px 12px;
-  }
+
   .section-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
-  .section {
-    padding: 50px 0;
+
+  .hero-subtitle {
+    font-size: 0.82rem;
   }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    max-width: 100%;
+  }
+
+  .schedule-tabs {
+    gap: 3px;
+  }
+
   .schedule-tab {
     padding: 6px 8px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+
+  .stat-number {
+    font-size: 1.5rem;
   }
-  .testimonial-card {
-    padding: 16px 12px;
-  }
-  .testimonial-text {
-    font-size: 0.85rem;
-  }
+
   .pricing-card {
-    padding: 24px 16px;
+    padding: 20px;
   }
+
   .plan-price .amount {
     font-size: 2rem;
   }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+}
+
+/* === iOS & Touch Device Optimizations === */
+@supports (-webkit-touch-callout: none) {
+  /* Fix iOS momentum scrolling */
   .nav-links {
-    width: 90%;
-    padding: 80px 20px 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix iOS 100vh issue */
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .schedule-tab,
+  .nav-links a,
+  .program-link,
+  .testimonial-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .schedule-tab {
+    padding: 10px 14px;
+  }
+
+  .trainer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Prevent text size adjustment on orientation change */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+  }
+
+  h1,
+  .hero-line {
+    font-size: 2rem;
   }
 }
